@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SteamView.Models.GameStats>
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "Index";
+    var userId = User.Identity.GetUserId();
+ 
+}
+
+<h2>Your Game Statistics </h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    <tr>
+        <th>
+            
+        </th>
+        
+        
+        <th>
+            @Html.DisplayNameFor(model => model.GameName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastPalayed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+
+
+
+
+
+    if (item.UserAcount.ApplicationUserId == userId)
+    {
+        <tr>
+      
+            <td>
+                <img src="@(item.GameImmage)"/>
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.GameName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastPalayed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GaneStatID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.GaneStatID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GaneStatID })
+            </td>
+        </tr>
+        }
+
+               }
+
+</table>

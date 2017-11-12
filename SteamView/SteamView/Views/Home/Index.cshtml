@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<div class="jumbotron">
+    <h1>Steam Stats</h1>
+    <p class="lead">View and share your steam stats online.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>*@
+
+<div class="row">
+    <div class="col-md-6 margin-top">
+        <a href="@Url.Action("Index", "GameStats" )" class="btn btn-primary btn-lg btn-block">View your Game Stats</a>
+        <a href="@Url.Action("Create", "GameStats" )" class="btn btn-primary btn-lg btn-block">Add a new Game</a>
+
+    </div>
+    <div class="col-md-6 margin-top">
+        <a href="@Url.Action("Details", "UserAcounts" )" class="btn btn-primary btn-lg btn-block">Your Profile</a>
+        
+
+    </div></div>

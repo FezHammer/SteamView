@@ -1,0 +1,54 @@
+﻿@model SteamView.Models.GameStats
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.GameName)</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPalayed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastPalayed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GaneStatID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
